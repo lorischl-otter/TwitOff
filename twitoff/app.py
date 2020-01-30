@@ -47,16 +47,17 @@ def create_app():
         fake_tweet = request.values['tweet_text']
         try:
             if user1 == user2:
-                message = "It's not very interesting to compare a user to themselves!"
+                message = "It's not very interesting to compare a single user!"
             else:
                 prediction = predict_user(user1, user2, fake_tweet)
-                message = "'{}' is more likely to be said by {} than {}.".format(
-                    fake_tweet, user1 if prediction else user2, 
-                    user2 if prediction else user1
-                    )
+                message = ("'{}' is more likely to be said by {} than {}."
+                           .format(fake_tweet, user1 if prediction else user2,
+                            user2 if prediction else user1
+                            ))
         except Exception as e:
             message = 'Error comparing {} and {}: {}'.format(user1, user2, e)
-        return render_template('compare.html', title='Prediction', message=message)
+        return render_template(
+            'compare.html', title='Prediction', message=message)
 
     @app.route('/reset')
     def reset():
@@ -66,7 +67,8 @@ def create_app():
 
     @app.route('/update')
     def update():
-        update_all_users()
-        return render_template('base.html', users=User.query.all(), title="Tweets updated!")
+        update_users()
+        return render_template(
+            'base.html', users=User.query.all(), title="Tweets updated!")
 
     return app
