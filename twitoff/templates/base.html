@@ -42,9 +42,9 @@
                 {% endfor %}
             </div>
             <div>
-                <h2>Users</h2>
+                <h2>Twitter Users</h2>
                 {% for user in users %}
-                <a href="/user/{{ user.username }}"><span class="stack">{{ user.username }}</span>
+                <a href="/user/{{ user.username }}"><span class="stack">{{ user.username }}</span></a>
                 {% endfor %}
                 <form action="/user" method="post">
                     <input type="text" name="username" placeholder="User to add">

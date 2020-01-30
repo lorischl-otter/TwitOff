@@ -54,6 +54,12 @@ def add_user(username):
         DB.session.commit()
 
 
+def update_users():
+    """Update all Tweets for all Users."""
+    for user in User.query.all():
+        add_user(user.username)
+
+
 # Depricated code:
 
         # db_user = User(
