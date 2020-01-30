@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/Users/loris/.local/share/virtualenvs/TwitOff-3usP8Eo9/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
+}

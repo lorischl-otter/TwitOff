@@ -8,7 +8,7 @@
         <nav>
             <a href="/" class="brand"><span>TwitOff!</span></a>
 
-            <! -- responsive-->
+            <!-- responsive-->
             <input id="bmenub" type="checkbox" class="show">
             <label for="bmenub" class="burger pseudo button">Menu</label>
 
@@ -47,7 +47,7 @@
                 <a href="/user/{{ user.username }}"><span class="stack">{{ user.username }}</span>
                 {% endfor %}
                 <form action="/user" method="post">
-                    <input type="text" name="user_name" placeholder="User to add">
+                    <input type="text" name="username" placeholder="User to add">
                     <input type="submit" value="Add User">
                 </form>
             </div>
