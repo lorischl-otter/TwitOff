@@ -17,6 +17,7 @@ def create_app():
 
     @app.route('/')
     def root():
+        DB.create_all()
         users = User.query.all()
         return render_template(
             'base.html', title='TwitOff', users=users)
